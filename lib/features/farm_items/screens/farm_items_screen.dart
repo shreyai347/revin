@@ -16,25 +16,25 @@ class _FarmItemsScreenState extends State<FarmItemsScreen> {
     {
       'name': 'Rice Seed',
       'price': 'Rs 14/kg',
-      'image': 'assets/images/rice.jpg',
+      'image': 'assets/rice.jpg',
       'description': 'High quality rice seeds for better yield',
     },
     {
       'name': 'Lemon Tree',
       'price': 'Rs 15/kg',
-      'image': 'assets/images/lemon.jpg',
+      'image': 'assets/lemon.jpg',
       'description': 'Fresh lemon tree saplings',
     },
     {
       'name': 'Wheat Seed',
       'price': 'Rs 12/kg',
-      'image': 'assets/images/wheat.jpg',
+      'image': 'assets/wheat.jpg',
       'description': 'Premium wheat seeds for farming',
     },
     {
       'name': 'Cherry Tree',
       'price': 'Rs 18/kg',
-      'image': 'assets/images/cherry.jpg',
+      'image': 'assets/cherry.jpg',
       'description': 'Sweet cherry tree plants',
     },
   ];
@@ -102,99 +102,97 @@ class _FarmItemsScreenState extends State<FarmItemsScreen> {
               ),
             ],
           ),
-          child: Row(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(8.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(12.r),
-                          ),
-                          child: Icon(
-                            Icons.storefront_rounded,
-                            color: Colors.white,
-                            size: 20.w,
-                          ),
-                        ),
-                        SizedBox(width: 12.w),
-                        Text(
-                          'Featured Products',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 26.sp,
-                            fontWeight: FontWeight.bold,
-                            letterSpacing: 0.5,
-                          ),
-                        ),
-                      ],
+              Row(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(8.w),
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(12.r),
                     ),
-                    SizedBox(height: 12.h),
-                    Text(
-                      'Discover premium agricultural products',
+                    child: Icon(
+                      Icons.storefront_rounded,
+                      color: Colors.white,
+                      size: 20.w,
+                    ),
+                  ),
+                  SizedBox(width: 12.w),
+                  Expanded(
+                    child: Text(
+                      'Featured Products',
                       style: TextStyle(
-                        color: Colors.white.withOpacity(0.9),
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w500,
-                        height: 1.3,
+                        color: Colors.white,
+                        fontSize: 24.sp, // Reduced from 26.sp
+                        fontWeight: FontWeight.bold,
+                        letterSpacing: 0.5,
                       ),
                     ),
-                    SizedBox(height: 8.h),
-                    Row(
+                  ),
+                ],
+              ),
+              SizedBox(height: 12.h),
+              Text(
+                'Discover premium agricultural products',
+                style: TextStyle(
+                  color: Colors.white.withOpacity(0.9),
+                  fontSize: 14.sp, // Reduced from 15.sp
+                  fontWeight: FontWeight.w500,
+                  height: 1.3,
+                ),
+              ),
+              SizedBox(height: 8.h),
+              Row(
+                children: [
+                  Icon(Icons.star_rounded, color: Colors.amber, size: 16.w),
+                  SizedBox(width: 4.w),
+                  Text(
+                    'Premium Quality',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.8),
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const Spacer(),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                      horizontal: 16.w,
+                      vertical: 8.h,
+                    ), // Reduced padding
+                    decoration: BoxDecoration(
+                      color: Colors.white.withOpacity(0.15),
+                      borderRadius: BorderRadius.circular(
+                        20.r,
+                      ), // Reduced radius
+                      border: Border.all(
+                        color: Colors.white.withOpacity(0.3),
+                        width: 1,
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(
-                          Icons.star_rounded,
-                          color: Colors.amber,
-                          size: 16.w,
-                        ),
-                        SizedBox(width: 4.w),
                         Text(
-                          'Premium Quality',
+                          'See All',
                           style: TextStyle(
-                            color: Colors.white.withOpacity(0.8),
-                            fontSize: 12.sp,
+                            color: Colors.white,
+                            fontSize: 13.sp, // Reduced from 15.sp
                             fontWeight: FontWeight.w600,
                           ),
                         ),
+                        SizedBox(width: 4.w), // Reduced spacing
+                        Icon(
+                          Icons.arrow_forward_rounded,
+                          color: Colors.white,
+                          size: 14.w, // Reduced from 16.w
+                        ),
                       ],
                     ),
-                  ],
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 12.h),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.15),
-                  borderRadius: BorderRadius.circular(25.r),
-                  border: Border.all(
-                    color: Colors.white.withOpacity(0.3),
-                    width: 1,
                   ),
-                ),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'See All',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 15.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    SizedBox(width: 6.w),
-                    Icon(
-                      Icons.arrow_forward_rounded,
-                      color: Colors.white,
-                      size: 16.w,
-                    ),
-                  ],
-                ),
+                ],
               ),
             ],
           ),
@@ -212,7 +210,7 @@ class _FarmItemsScreenState extends State<FarmItemsScreen> {
         crossAxisCount: 2,
         crossAxisSpacing: 16.w,
         mainAxisSpacing: 16.h,
-        childAspectRatio: 0.8, // Increased aspect ratio to fix overflow
+        childAspectRatio: 0.9, // Increased to 0.9 to fix overflow completely
       ),
       itemCount: _products.length,
       itemBuilder: (context, index) {
@@ -231,247 +229,261 @@ class _FarmItemsScreenState extends State<FarmItemsScreen> {
           ),
         );
       },
-      child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20.r),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black.withOpacity(0.08),
-                blurRadius: 20,
-                offset: const Offset(0, 8),
-              ),
-              BoxShadow(
-                color: const Color(0xFF2E7D32).withOpacity(0.1),
-                blurRadius: 10,
-                offset: const Offset(0, 4),
-              ),
-            ],
-            border: Border.all(color: Colors.grey.withOpacity(0.1), width: 1),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // Product Image with overlay
-              Expanded(
-                flex: 4,
-                child: Container(
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20.r),
-                      topRight: Radius.circular(20.r),
+      child:
+          Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.08),
+                      blurRadius: 20,
+                      offset: const Offset(0, 8),
                     ),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        const Color(0xFF2E7D32).withOpacity(0.1),
-                        const Color(0xFF4CAF50).withOpacity(0.05),
-                      ],
+                    BoxShadow(
+                      color: const Color(0xFF2E7D32).withOpacity(0.1),
+                      blurRadius: 10,
+                      offset: const Offset(0, 4),
                     ),
+                  ],
+                  border: Border.all(
+                    color: Colors.grey.withOpacity(0.1),
+                    width: 1,
                   ),
-                  child: Stack(
-                    children: [
-                      // Product Image
-                      ClipRRect(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(20.r),
-                          topRight: Radius.circular(20.r),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // Product Image with overlay
+                    Expanded(
+                      flex: 4,
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(20.r),
+                            topRight: Radius.circular(20.r),
+                          ),
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              const Color(0xFF2E7D32).withOpacity(0.1),
+                              const Color(0xFF4CAF50).withOpacity(0.05),
+                            ],
+                          ),
                         ),
-                        child: Image.asset(
-                          product['image'],
-                          width: double.infinity,
-                          height: double.infinity,
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) {
-                            return Container(
+                        child: Stack(
+                          children: [
+                            // Product Image
+                            ClipRRect(
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(20.r),
+                                topRight: Radius.circular(20.r),
+                              ),
+                              child: Image.asset(
+                                product['image'],
+                                width: double.infinity,
+                                height: double.infinity,
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) {
+                                  return Container(
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment.bottomRight,
+                                        colors: [
+                                          const Color(
+                                            0xFF2E7D32,
+                                          ).withOpacity(0.1),
+                                          const Color(
+                                            0xFF4CAF50,
+                                          ).withOpacity(0.1),
+                                        ],
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Container(
+                                        padding: EdgeInsets.all(16.w),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white.withOpacity(0.9),
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: const Color(
+                                                0xFF2E7D32,
+                                              ).withOpacity(0.2),
+                                              blurRadius: 10,
+                                              offset: const Offset(0, 4),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Icon(
+                                          _getProductIcon(product['name']),
+                                          color: const Color(0xFF2E7D32),
+                                          size: 32.w,
+                                        ),
+                                      ),
+                                    ),
+                                  );
+                                },
+                              ),
+                            ),
+
+                            // Gradient overlay
+                            Positioned.fill(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20.r),
+                                    topRight: Radius.circular(20.r),
+                                  ),
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topCenter,
+                                    end: Alignment.bottomCenter,
+                                    colors: [
+                                      Colors.transparent,
+                                      Colors.black.withOpacity(0.1),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+
+                            // Favorite button
+                            Positioned(
+                              top: 8.h,
+                              right: 8.w,
+                              child: Container(
+                                padding: EdgeInsets.all(6.w),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.9),
+                                  shape: BoxShape.circle,
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black.withOpacity(0.1),
+                                      blurRadius: 8,
+                                      offset: const Offset(0, 2),
+                                    ),
+                                  ],
+                                ),
+                                child: Icon(
+                                  Icons.favorite_border_rounded,
+                                  color: Colors.grey[600],
+                                  size: 16.w,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+                    // Product Details
+                    Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: EdgeInsets.all(12.w), // Reduced from 16.w
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Product Name
+                            Text(
+                              product['name'],
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 12.sp, // Reduced from 16.sp
+                                fontWeight: FontWeight.bold,
+                                height: 1.0, // Reduced from 1.2
+                              ),
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+
+                            SizedBox(height: 4.h), // Reduced from 6.h
+                            // Price
+                            Container(
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 6.w, // Reduced from 8.w
+                                vertical: 3.h, // Reduced from 4.h
+                              ),
                               decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  colors: [
-                                    const Color(0xFF2E7D32).withOpacity(0.1),
-                                    const Color(0xFF4CAF50).withOpacity(0.1),
+                                color: const Color(0xFF2E7D32).withOpacity(0.1),
+                                borderRadius: BorderRadius.circular(
+                                  6.r,
+                                ), // Reduced from 8.r
+                              ),
+                              child: Text(
+                                product['price'],
+                                style: TextStyle(
+                                  color: const Color(0xFF2E7D32),
+                                  fontSize: 10.sp, // Reduced from 14.sp
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                            ),
+
+                            const Spacer(),
+
+                            // Add to Cart Button
+                            SizedBox(
+                              width: double.infinity,
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  _addToCart(product);
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF2E7D32),
+                                  foregroundColor: Colors.white,
+                                  elevation: 0,
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 8.h,
+                                  ), // Reduced from 12.h
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      10.r,
+                                    ), // Reduced from 12.r
+                                  ),
+                                  shadowColor: const Color(
+                                    0xFF2E7D32,
+                                  ).withOpacity(0.3),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.shopping_cart_outlined,
+                                      size: 14.w, // Reduced from 16.w
+                                      color: Colors.white,
+                                    ),
+                                    SizedBox(width: 4.w), // Reduced from 6.w
+                                    Text(
+                                      'Add to Cart',
+                                      style: TextStyle(
+                                        fontSize: 10.sp, // Reduced from 13.sp
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
-                              child: Center(
-                                child: Container(
-                                  padding: EdgeInsets.all(16.w),
-                                  decoration: BoxDecoration(
-                                    color: Colors.white.withOpacity(0.9),
-                                    shape: BoxShape.circle,
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: const Color(
-                                          0xFF2E7D32,
-                                        ).withOpacity(0.2),
-                                        blurRadius: 10,
-                                        offset: const Offset(0, 4),
-                                      ),
-                                    ],
-                                  ),
-                                  child: Icon(
-                                    _getProductIcon(product['name']),
-                                    color: const Color(0xFF2E7D32),
-                                    size: 32.w,
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-
-                      // Gradient overlay
-                      Positioned.fill(
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(20.r),
-                              topRight: Radius.circular(20.r),
                             ),
-                            gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                              colors: [
-                                Colors.transparent,
-                                Colors.black.withOpacity(0.1),
-                              ],
-                            ),
-                          ),
+                          ],
                         ),
                       ),
-
-                      // Favorite button
-                      Positioned(
-                        top: 8.h,
-                        right: 8.w,
-                        child: Container(
-                          padding: EdgeInsets.all(6.w),
-                          decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.9),
-                            shape: BoxShape.circle,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.1),
-                                blurRadius: 8,
-                                offset: const Offset(0, 2),
-                              ),
-                            ],
-                          ),
-                          child: Icon(
-                            Icons.favorite_border_rounded,
-                            color: Colors.grey[600],
-                            size: 16.w,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-              ),
-
-              // Product Details
-              Expanded(
-                flex: 3,
-                child: Padding(
-                  padding: EdgeInsets.all(16.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Product Name
-                      Text(
-                        product['name'],
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.bold,
-                          height: 1.2,
-                        ),
-                        maxLines: 1,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-
-                      SizedBox(height: 6.h),
-
-                      // Price
-                      Container(
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 8.w,
-                          vertical: 4.h,
-                        ),
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF2E7D32).withOpacity(0.1),
-                          borderRadius: BorderRadius.circular(8.r),
-                        ),
-                        child: Text(
-                          product['price'],
-                          style: TextStyle(
-                            color: const Color(0xFF2E7D32),
-                            fontSize: 14.sp,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ),
-
-                      const Spacer(),
-
-                      // Add to Cart Button
-                      SizedBox(
-                        width: double.infinity,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            _addToCart(product);
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xFF2E7D32),
-                            foregroundColor: Colors.white,
-                            elevation: 0,
-                            padding: EdgeInsets.symmetric(vertical: 12.h),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.r),
-                            ),
-                            shadowColor: const Color(
-                              0xFF2E7D32,
-                            ).withOpacity(0.3),
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(
-                                Icons.shopping_cart_outlined,
-                                size: 16.w,
-                                color: Colors.white,
-                              ),
-                              SizedBox(width: 6.w),
-                              Text(
-                                'Add to Cart',
-                                style: TextStyle(
-                                  fontSize: 13.sp,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-          ),
-        )
-        .animate(delay: (index * 150).ms)
-        .scale(
-          duration: 700.ms,
-          curve: Curves.elasticOut,
-          begin: const Offset(0.7, 0.7),
-          end: const Offset(1.0, 1.0),
-        )
-        .fadeIn(duration: 700.ms);
+              )
+              .animate(delay: (index * 150).ms)
+              .scale(
+                duration: 700.ms,
+                curve: Curves.elasticOut,
+                begin: const Offset(0.7, 0.7),
+                end: const Offset(1.0, 1.0),
+              )
+              .fadeIn(duration: 700.ms),
+    );
   }
 
   Widget _buildFAB() {
